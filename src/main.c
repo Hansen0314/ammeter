@@ -8,12 +8,12 @@
   ******************************************************************************
 */
 
-
 #include "stm32l0xx.h"
-			
-
+#include "bsp_header.h"
 int main(void)
 {
-
+	BSP_UART_InitTypeDef  BSP_UART;
+	BSP_UART.BaudRate = 9600;
+	UART_Init(&BSP_UART);
 	for(;;);
 }
