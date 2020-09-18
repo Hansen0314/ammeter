@@ -22,12 +22,11 @@
 #define __BSP_HEADER_H
 
 #ifdef __cplusplus
- extern "C" {
+extern "C" {
 #endif
-//#include "stm32l0xx.h"
-//select module that need to enable
+//select module what you need
 #define UART_BSP_EN
-
+//#define UART_PRINTF
 #include "Uart_bsp.h"
 
 

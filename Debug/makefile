@@ -11,6 +11,7 @@ RM := rm -rf
 -include startup/subdir.mk
 -include src/subdir.mk
 -include HAL_Driver/Src/subdir.mk
+-include BSP/src/subdir.mk
 -include subdir.mk
 -include objects.mk
 
@@ -34,7 +35,7 @@ all: ammeter.elf
 ammeter.elf: $(OBJS) $(USER_OBJS) G:\seeed\ammeter\software\ammeter/LinkerScript.ld
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU GCC Linker'
-	arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -T"G:/seeed/ammeter/software/ammeter/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "ammeter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
+	arm-none-eabi-gcc -mcpu=cortex-m0plus -mthumb -mfloat-abi=soft -specs=nosys.specs -specs=nano.specs -T"G:/seeed/ammeter/software/ammeter/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "ammeter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -lm
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
@@ -46,7 +47,7 @@ clean:
 
 post-build:
 	-@echo 'Generating binary and Printing size information:'
-	arm-none-eabi-objcopy -O binary "ammeter.elf" "ammeter.bin"
+	arm-none-eabi-objcopy -O ihex "ammeter.elf" "ammeter.hex"
 	arm-none-eabi-size "ammeter.elf"
 	-@echo ' '
 
