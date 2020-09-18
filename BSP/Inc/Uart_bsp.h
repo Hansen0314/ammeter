@@ -25,7 +25,6 @@
 #endif
 #include "stm32l0xx_ammeter.h"
 InitStatus BSP_UART_Init(void);
-
 #ifdef __cplusplus
 }
 #endif /*  */

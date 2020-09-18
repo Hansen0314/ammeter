@@ -11,6 +11,9 @@ INIT_SUCCESS = 0,
 INIT_ERROR = !INIT_SUCCESS
 } InitStatus;
 
+//select module what you need
+#define UART_BSP_EN
+
 #ifdef UART_BSP_EN
 
 /* Exported types ------------------------------------------------------------*/
@@ -36,7 +39,6 @@ INIT_ERROR = !INIT_SUCCESS
 
 InitStatus HAL_UARTx_Init(void);
 #endif /* UART_BSP_EN */
-
 #ifdef __cplusplus
 }
 #endif /*  */

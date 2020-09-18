@@ -24,9 +24,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-//select module what you need
-#define UART_BSP_EN
-//#define UART_PRINTF
 #include "Uart_bsp.h"
 
 
