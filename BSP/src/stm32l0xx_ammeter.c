@@ -436,6 +436,13 @@ __weak Functiontatus ADC_Sample(void)
    */
 	return FUNCTION_SUCCESS;
 }
+__weak void TimerTask(void)
+{
+  /* NOTE : This function should not be modified, when the callback is needed,
+            the HAL_SYSTICK_Callback could be implemented in the user file
+   */
+}
+
 /**
   * @brief  Period elapsed callback in non blocking mode
   * @param  htim : TIM handle
@@ -443,7 +450,8 @@ __weak Functiontatus ADC_Sample(void)
   */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	ADC_Sample();
+//	ADC_Sample();
+	TimerTask();
 }
 
 #endif /* TIMER_BSP_EN */

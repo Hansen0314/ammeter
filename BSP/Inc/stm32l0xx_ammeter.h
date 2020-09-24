@@ -95,6 +95,7 @@ Functiontatus HAL_Get_ADC_Vaule(uint32_t *uwADCxConvertedValue);
 #define TIMx_IRQHandler                TIM2_IRQHandler
 InitStatus HAL_SYSTICK_Init(void);
 InitStatus HAL_TIMERx_Init(uint32_t Period);
-Functiontatus ADC_Sample(void);
+//Functiontatus ADC_Sample(void);
+void TimerTask(void);
 #endif/* SYSTICK_EN */
 #endif
